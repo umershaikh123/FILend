@@ -19,23 +19,15 @@ app.use(function (req, res, next) {
   );
   next();
 });
-// app.use((req, res, next) => {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept"
-//   );
-//   next();
-// });
 
 let dataArray = [];
 
-app.post("/LenderData", (req, res) => {
+app.post("/", (req, res) => {
   console.log(req.body);
   dataArray.push(req.body);
 });
 
-app.get("/LenderData", (req, res) => {
+app.get("/", (req, res) => {
   res.json(dataArray);
 });
 

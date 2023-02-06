@@ -3,16 +3,6 @@
 import "../styles/globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
 
-// import { createAuthenticationAdapter } from "@rainbow-me/rainbowkit";
-// import { SiweMessage } from "siwe";
-
-// import { SessionProvider } from "next-auth/react";
-// import { AppProps } from "next/app";
-
-// import {
-//   RainbowKitSiweNextAuthProvider,
-//   GetSiweMessageOptions,
-// } from "@rainbow-me/rainbowkit-siwe-next-auth";
 import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 
 import { getDefaultWallets, darkTheme } from "@rainbow-me/rainbowkit";

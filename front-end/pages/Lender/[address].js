@@ -26,17 +26,16 @@ import { ethers } from "ethers";
 
 const { BigNumber } = require("ethers");
 
-const API_URL = process.env.API_URL || "http://localhost:3000/LenderData";
-const API_URL2 =
-  process.env.API_URL || "https://fil-lend.vercel.app/api/LenderData.js";
-
 export async function getServerSideProps(context) {
-  const res = await fetch(`${API_URL2}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  const res = await fetch(
+    `https://fil-lend-server-3lxeozrph-umershaikh123.vercel.app`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
 
   const data = await res.json();
 
@@ -170,7 +169,10 @@ const address = ({ lendersData }) => {
 
         axios
           // .post("http://localhost:3000/LenderData", data)
-          .post("https://filLend.vercel.app/api/[LenderData].js", data)
+          .post(
+            "https://fil-lend-server-3lxeozrph-umershaikh123.vercel.app",
+            data
+          )
           .then((response) => {
             console.log(response.body);
           })
@@ -225,7 +227,10 @@ const address = ({ lendersData }) => {
         };
 
         axios
-          .post("http://localhost:3000/LenderData", data)
+          .post(
+            "https://fil-lend-server-3lxeozrph-umershaikh123.vercel.app",
+            data
+          )
           .then((response) => {
             console.log(response.body);
           })

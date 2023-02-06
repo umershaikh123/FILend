@@ -28,7 +28,7 @@ const { BigNumber } = require("ethers");
 
 const API_URL = process.env.API_URL || "http://localhost:3000/LenderData";
 const API_URL2 =
-  process.env.API_URL || "https://filLend.vercel.app/api/[LenderData].js";
+  process.env.API_URL || "https://fil-lend.vercel.app/api/LenderData.js";
 
 export async function getServerSideProps(context) {
   const res = await fetch(`${API_URL2}`, {

@@ -26,8 +26,12 @@ import { ethers } from "ethers";
 
 const { BigNumber } = require("ethers");
 
+const API_URL = process.env.API_URL || "http://localhost:3000/LenderData";
+const API_URL2 =
+  process.env.API_URL || "https://filLend.vercel.app/api/[LenderData].js";
+
 export async function getServerSideProps(context) {
-  const res = await fetch("http://localhost:3000/LenderData", {
+  const res = await fetch(`${API_URL2}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -165,7 +169,8 @@ const address = ({ lendersData }) => {
         };
 
         axios
-          .post("http://localhost:3000/LenderData", data)
+          // .post("http://localhost:3000/LenderData", data)
+          .post("https://filLend.vercel.app/api/[LenderData].js", data)
           .then((response) => {
             console.log(response.body);
           })
